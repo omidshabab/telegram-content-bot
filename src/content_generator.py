@@ -7,7 +7,7 @@ class ContentGenerator:
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel('gemini-pro')
         
-    def generate_content(self) -> Dict[str, Any]:
+    def generate_content(self, channel_username: str) -> Dict[str, Any]:
         prompt = """
         Create a short, engaging post in Persian about one of these topics: product management, indie hacking, or product design.
         The post should:
@@ -25,7 +25,7 @@ class ContentGenerator:
         if not response.text:
             raise Exception("Failed to generate content")
         
-        content_with_channel = f"{response.text}\n\n@omidshabab_fa"
+        content_with_channel = f"{response.text}\n\n@{channel_username}"
             
         return {
             "content": content_with_channel,
