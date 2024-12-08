@@ -9,7 +9,7 @@ on:
 
 jobs:
   post:
-    runs-on: self-hosted    # Using GitHub-hosted runner instead of self-hosted
+    runs-on: ubuntu-latest    # Using GitHub-hosted runner instead of self-hosted
     
     steps:
     - uses: actions/checkout@v2
