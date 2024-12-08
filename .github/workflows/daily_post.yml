@@ -2,7 +2,7 @@ name: Daily Telegram Post
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # Runs at 8:00 UTC daily
+    - cron: '*/1 * * * *'  # Runs at 8:00 UTC daily
   workflow_dispatch:      # Allows manual trigger
   push:
     branches: [ main ]    # Triggers on push to main branch

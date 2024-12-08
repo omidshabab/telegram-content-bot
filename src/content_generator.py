@@ -24,7 +24,9 @@ class ContentGenerator:
         # Ensure we get a response
         if not response.text:
             raise Exception("Failed to generate content")
+        
+        content_with_channel = f"{response.text}\n\n@omidshabab_fa"
             
         return {
-            "content": response.text,
+            "content": content_with_channel,
         }
