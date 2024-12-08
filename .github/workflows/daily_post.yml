@@ -2,7 +2,7 @@ name: Daily Telegram Post
 
 on:
   schedule:
-    - cron: '*/10 * * * *'  # Runs at 8:00 UTC daily
+    - cron: '30 9 * * *'  # Runs at 9:30 UTC daily
   workflow_dispatch:      # Allows manual trigger
   push:
     branches: [ main ]    # Triggers on push to main branch
@@ -30,4 +30,5 @@ jobs:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
         TELEGRAM_CHANNEL_USERNAME: ${{ secrets.TELEGRAM_CHANNEL_USERNAME }}
+        CONTENT_TOPICS: ${{ secrets.CONTENT_TOPICS }}
       run: python src/main.py

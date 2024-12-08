@@ -7,9 +7,9 @@ class ContentGenerator:
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel('gemini-pro')
         
-    def generate_content(self, channel_username: str) -> Dict[str, Any]:
-        prompt = """
-        Create a short, engaging post in Persian about one of these topics: product management, indie hacking, or product design.
+    def generate_content(self, channel_username: str, topics: str) -> Dict[str, Any]:
+        prompt = f"""
+        Create a short, engaging post in Persian about one of these topics: {topics}.
         The post should:
         - Be direct and start with the main content (no greetings)
         - Use a friendly tone
