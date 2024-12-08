@@ -13,7 +13,7 @@ def main():
     
     try:
         # Generate content
-        content = generator.generate_content(config.TELEGRAM_CHANNEL_USERNAME)
+        content = generator.generate_content(config.TELEGRAM_CHANNEL_USERNAME, config.CONTENT_TOPICS)
         
         # Publish to Telegram
         publisher.publish_post(content)

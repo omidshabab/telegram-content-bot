@@ -16,9 +16,10 @@ class Config:
     TELEGRAM_BOT_TOKEN: str = os.getenv("TELEGRAM_BOT_TOKEN")
     TELEGRAM_CHANNEL_ID: str = os.getenv("TELEGRAM_CHANNEL_ID")
     TELEGRAM_CHANNEL_USERNAME: str = os.getenv("TELEGRAM_CHANNEL_USERNAME")
+    CONTENT_TOPICS: str = os.getenv("CONTENT_TOPICS")
     
     def validate(self):
-        required_vars = ["GEMINI_API_KEY", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHANNEL_ID", "TELEGRAM_CHANNEL_USERNAME"]
+        required_vars = ["GEMINI_API_KEY", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHANNEL_ID", "TELEGRAM_CHANNEL_USERNAME", "CONTENT_TOPICS"]
         missing_vars = [var for var in required_vars if not getattr(self, var)]
         
         if missing_vars:
