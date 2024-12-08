@@ -1,4 +1,3 @@
-# src/telegram_publisher.py
 import requests
 from typing import Dict, Any
 
@@ -8,12 +7,12 @@ class TelegramPublisher:
         self.channel_id = channel_id
         self.base_url = f"https://api.telegram.org/bot{bot_token}"
         
-    def publish_post(self, content: str) -> bool:
+    def publish_post(self, content: Dict[str, Any]) -> bool:
         endpoint = f"{self.base_url}/sendMessage"
         
         data = {
             "chat_id": self.channel_id,
-            "text": content,
+            "text": content["content"],
             "parse_mode": "HTML"
         }
         
