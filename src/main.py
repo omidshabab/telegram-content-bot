@@ -9,7 +9,7 @@ def main():
     
     # Initialize services
     generator = ContentGenerator(config.GEMINI_API_KEY)
-    publisher = TelegramPublisher(config.TELEGRAM_BOT_TOKEN, config.TELEGRAM_CHANNEL_ID)
+    publisher = TelegramPublisher(config.TELEGRAM_BOT_TOKEN, config.TELEGRAM_CHANNEL_ID, config.TELEGRAM_CHANNEL_USERNAME)
     
     try:
         # Generate content
