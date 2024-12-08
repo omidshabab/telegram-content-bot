@@ -6,8 +6,6 @@ def main():
     # Load and validate config
     config = Config()
     config.validate()
-
-    print("username: ",config.TELEGRAM_CHANNEL_USERNAME)
     
     # Initialize services
     generator = ContentGenerator(config.GEMINI_API_KEY)
